@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Labelless Fields Demo</title>
+		<style type="text/css">
+			label { display: block; }
+		</style>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="../src/jquery.labelless.js"></script>
+	</head>
+	
+	<body>
+		<form id="labelless_form">
+			<div class="field">
+				<label for="name">Name</label>
+				<input type="text" id="name" name="name" value="" />
+			</div>
+			
+			<div class="field">
+				<label for="email">Email</label>
+				<input type="text" id="email" name="email" value="" />
+			</div>
+			
+			<div class="field">
+				<label for="subject">Subject</label>
+				<input type="text" id="subject" name="subject" value="" />
+			</div>
+			
+			<div class="field">
+				<label for="message">Message</label>
+				<textarea name="message" id="message"></textarea>
+			</div>
+		</form>
+		
+		<script type="text/javascript">
+			$(function() {
+				$("#labelless_form").labelless();
+			});
+		</script>
+	</body>
+</html>
