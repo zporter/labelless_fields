@@ -1,7 +1,11 @@
 (function( $ ){
-  $.fn.myPlugin = function() {
+  $.fn.labelless = function() {
   
-    // Do your awesome plugin stuff here
+    return this.each( function() {
+		var $this = $(this);
+		
+		// do stuff
+	});
 
   };
 })( jQuery );
