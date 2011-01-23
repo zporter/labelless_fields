@@ -3,13 +3,14 @@
 		<title>Labelless Fields Demo</title>
 		<style type="text/css">
 			label { display: block; }
+			input, textarea { padding: 10px; }
 		</style>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="../src/jquery.labelless.js"></script>
 	</head>
 	
 	<body>
-		<form id="labelless_form">
+		<form id="labelless_contact_form">			
 			<div class="field">
 				<label for="name">Name</label>
 				<input type="text" id="name" name="name" value="" />
@@ -17,7 +18,7 @@
 			
 			<div class="field">
 				<label for="email">Email</label>
-				<input type="text" id="email" name="email" value="" />
+				<input type="email" id="email" name="email" value="" />
 			</div>
 			
 			<div class="field">
@@ -31,9 +32,22 @@
 			</div>
 		</form>
 		
+		<form id="labelless_login_form">
+			<div class="field">
+				<label for="username">Username</label>
+				<input type="text" name="username" id="username" value="" />
+			</div>
+			
+			<div class="field">
+				<label for="password">Password</label>
+				<input type="password" name="password" id="password" value="" />
+			</div>
+		</form>
+		
 		<script type="text/javascript">
 			$(function() {
-				$("#labelless_form").labelless();
+				$("#labelless_contact_form").labelless();
+				$("#labelless_login_form").labelless();
 			});
 		</script>
 	</body>
