@@ -7,7 +7,25 @@
 			'fadeOnFocus': true,
 			'fadeOpacity': .5,
 			'fadeDuration': 200
-		};
+		},
+		showing = true;
+		
+		/*
+		 * Functions to handle different responsibilities
+		*/
+		
+		function positionLabel ( label, field ) {
+			label.parent().css("position", "relative");
+			label.css({
+				"position": "absolute",
+				"top": "2",
+				"left": "5",
+				'color': settings.labelColor
+			});
+			
+			label.css('padding-top', field.css('padding-top'));
+			label.css('padding-left', field.css('padding-left'));
+		}
   
     return this.each( function() {
 			var $this = $(this);
@@ -27,8 +45,6 @@
 					return;	// for attribute wasn't used; cannot attach to field
 				}
 				
-				console.log( 'in the form' );
-				
 				// get the field label is attached to
 				// only accept given fields
 				$field = $(
@@ -46,16 +62,7 @@
 				}
 				
 				// position the label
-				$label.parent().css("position", "relative");
-				$label.css({
-					"position": "absolute",
-					"top": "2",
-					"left": "5",
-					'color': settings.labelColor
-				});
-				
-				$label.css('padding-top', $field.css('padding-top'));
-				$label.css('padding-left', $field.css('padding-left'));
+				positionLabel( $label, $field );
 				
 				// determine whether to show label
 				var showing = true;
