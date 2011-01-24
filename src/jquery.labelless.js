@@ -26,7 +26,37 @@
 			label.css('padding-top', field.css('padding-top'));
 			label.css('padding-left', field.css('padding-left'));
 		}
+		
+		function showLabel ( label, field ) {
+			if ( field.val() != '' ) {
+				label.stop().hide();
+				showing = false;
+			}
+			else if ( !showing ) {
+				label.show();
+				showing = true;
+			}
+		}
+		
+		function bindEvents ( label, field ) {
+			field.bind('keyup.labelless', function (e) {
+				showLabel( label, field );
+			})
+			.bind('focus.labelless', function (e) {
+				if ( showing && settings.fadeOnFocus ) {
+					label.stop().animate( { opacity: settings.fadeOpacity }, settings.fadeDuration );
+				}
+			})
+			.bind( 'blur.labelless', function (e) {
+				if (showing) {
+					label.stop().css( 'opacity', 1.0 );
+				}
+			});
+		}
   
+		/*
+		 * Main jQuery plugin loop
+		*/
     return this.each( function() {
 			var $this = $(this);
 			
@@ -65,34 +95,11 @@
 				positionLabel( $label, $field );
 				
 				// determine whether to show label
-				var showing = true;
-				
-				if ( $field.val() != '' ) {
-					showing = false;
-					$label.hide();
-				}
+				showLabel( $label, $field );
 				
 				// bind events
-				$field.bind('keyup.labelless', function (e) {
-					if ( this.value != '' ) {
-						$label.stop().hide();
-						showing = false;
-					}
-					else if ( !showing ) {
-						$label.show();
-						showing = true;
-					}
-				})
-				.bind('focus.labelless', function (e) {
-					if ( showing && settings.fadeOnFocus ) {
-						$label.stop().animate( { opacity: settings.fadeOpacity }, settings.fadeDuration );
-					}
-				})
-				.bind( 'blur.labelless', function (e) {
-					if (showing) {
-						$label.stop().css( 'opacity', 1.0 );
-					}
-				});
+				bindEvents( $label, $field );
+				
 			});
 		});
 
