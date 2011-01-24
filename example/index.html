@@ -1,48 +1,59 @@
 <html>
 	<head>
 		<title>Labelless Fields Demo</title>
-		<style type="text/css">
-			label { display: block; }
-			input, textarea { padding: 10px; }
-		</style>
+		<link href="css/reset.css" rel="stylesheet" type='text/css'>
+		<link href="css/main.css" rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="../src/jquery.labelless.js"></script>
 	</head>
 	
 	<body>
-		<form id="labelless_contact_form">			
-			<div class="field">
-				<label for="name">Name</label>
-				<input type="text" id="name" name="name" value="" />
-			</div>
+		<div id="contents">
+			<h1>Label-Less Form Fields</h1>
 			
-			<div class="field">
-				<label for="email">Email</label>
-				<input type="email" id="email" name="email" value="" />
-			</div>
-			
-			<div class="field">
-				<label for="subject">Subject</label>
-				<input type="text" id="subject" name="subject" value="" />
-			</div>
-			
-			<div class="field">
-				<label for="message">Message</label>
-				<textarea name="message" id="message"></textarea>
-			</div>
-		</form>
+			<p class="description">
+				Below are a couple of forms commonly used throughout websites. Each form is using the jQuery labelless plugin. Feel free to play around. If you find any issues or have any suggestions, please submit an issue on the GitHub page. Check out my blog post on the making of this plugin.
+			</p>
 		
-		<form id="labelless_login_form">
-			<div class="field">
-				<label for="username">Username</label>
-				<input type="text" name="username" id="username" value="" />
-			</div>
+			<form id="labelless_contact_form">
+				<h4>Contact Us</h4>
+				
+				<div class="field">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" value="" />
+				</div>
 			
-			<div class="field">
-				<label for="password">Password</label>
-				<input type="password" name="password" id="password" value="" />
-			</div>
-		</form>
+				<div class="field">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" value="" />
+				</div>
+			
+				<div class="field">
+					<label for="subject">Subject</label>
+					<input type="text" id="subject" name="subject" value="" />
+				</div>
+			
+				<div class="field">
+					<label for="message">Message</label>
+					<textarea name="message" id="message" rows='10' cols='40'></textarea>
+				</div>
+			</form>
+		
+			<form id="labelless_login_form">
+				<h4>Login</h4>
+				
+				<div class="field">
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" value="" />
+				</div>
+			
+				<div class="field">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" value="" />
+				</div>
+			</form>
+			
+		</div> <!-- #contents -->
 		
 		<script type="text/javascript">
 			$(function() {

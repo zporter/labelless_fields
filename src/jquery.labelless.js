@@ -18,8 +18,8 @@
 			label.parent().css("position", "relative");
 			label.css({
 				"position": "absolute",
-				"top": "2",
-				"left": "5",
+				"top": "4",
+				"left": "4",
 				'color': settings.labelColor
 			});
 			
