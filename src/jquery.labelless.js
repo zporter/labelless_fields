@@ -6,7 +6,8 @@
 			'labelColor': '#444',
 			'fadeOnFocus': true,
 			'fadeOpacity': .5,
-			'fadeDuration': 200
+			'fadeDuration': 200,
+			'picky': false
 		},
 		showing = true;
 		
@@ -17,9 +18,10 @@
 		function positionLabel ( label, field ) {
 			label.parent().css("position", "relative");
 			label.css({
+				'display': 'block',
 				"position": "absolute",
-				"top": "4",
-				"left": "4",
+				"top": "4px",
+				"left": "4px",
 				'color': settings.labelColor
 			});
 			
@@ -48,7 +50,11 @@
 				}
 			})
 			.bind( 'blur.labelless', function (e) {
-				if (showing) {
+				if ( field.val() != '' ) {
+					label.stop().hide();
+					showing = false;
+				}
+				else if (showing) {
 					label.stop().css( 'opacity', 1.0 );
 				}
 			});
@@ -67,11 +73,12 @@
 		
 			// loop through all labels in the given form tag
 			$this.find('label').each( function() {
+				
 				var $label = $(this),
 						label_for = $label.attr('for'),
 						$field;
 						
-				if ( !label_for ) {
+				if ( !label_for || ( settings.picky && !$label.hasClass('labelless') ) ) {
 					return;	// for attribute wasn't used; cannot attach to field
 				}
 				

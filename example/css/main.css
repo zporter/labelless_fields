@@ -1,9 +1,40 @@
-body { font-size: 14px; background-color: #454A40; }
-div#contents { width: 80%; margin: 30px auto; padding: 30px; background-color: #F2F5D0; color: #292621; }
-h1 { font-size: 24px; margin-bottom: 20px; }
-h4 { margin-bottom: 10px; font-size: 18px; }
-p.description { margin: 20px 0; padding: 15px; background-color: E5E19E; color: #222; font-size: 16px; line-height: 1.4em; }
+body {
+	font-size: 14px;
+	background-color: #454A40;
+	width: 100%;
+}
+
+div#contents {
+	width: 60%;
+	margin: 30px auto;
+	padding: 30px;
+	background-color: #F2F5D0;
+	color: #292621;
+}
+
+h1 {
+	font-size: 24px;
+	margin-bottom: 20px;
+}
+
+h4 {
+	margin-bottom: 10px;
+	font-size: 18px;
+}
+
+p.description {
+	margin: 20px 0;
+	padding: 15px;
+	background-color: #E5E19E;
+	color: #222;
+	font-size: 16px;
+	line-height: 1.4em;
+}
+
 form { margin: 30px 20px; }
+
 label { display: block; }
+
 input { padding: 6px; width: 200px; }
+
 textarea { padding: 5px; }
