@@ -22,22 +22,18 @@ IE6+, WebKit Browsers (Safari, Chrome), Firefox 3+
 
 ### HTML
 
-<pre><code>
-<form id="form_id">
-	<div class="field">
-	  <label for="field_id">Label Text</label><br />
-	  <input type="text" name="field_id" value="" id="field_id">
-	</div>
-</form>
-</code></pre>
+	<form id="form_id">
+		<div class="field">
+		  <label for="field_id">Label Text</label><br />
+		  <input type="text" name="field_id" value="" id="field_id">
+		</div>
+	</form>
 
 ### Javascript
 
-<pre>
-$(function() {
-  $("#form_id").labelless();
-});
-</pre>
+	$(function() {
+	  $("#form_id").labelless();
+	});
 
 ## Options
 
@@ -45,7 +41,7 @@ Five options can be passed along with the method.
 
 To set the options at call time, use the following syntax:
 
-<pre>$("form").labelless({ optionName:value });</pre>
+	$("form").labelless({ optionName:value });
 
 *<code>labelColor:</code> Color value*
 
@@ -67,7 +63,7 @@ The amount of time the fade animation lasts
 
 When set to true, the plugin will only look for labels with class of "labelless". Example:
 
-<pre><code><label for="field_id" class="labelless">Label</label></code></pre>
+	<label for="field_id" class="labelless">Label</label>
 
 ## Acknowledgements
 
