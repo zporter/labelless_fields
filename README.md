@@ -59,7 +59,7 @@ The amount of time the fade animation lasts
 
 *<code>picky:</code> Boolean value*
 
-When set to true, the plugin will only look for labels with class of "labelless". Example:
+When set to true, the plugin will only look for inputs with class of "labelless". Example:
 
 	<input type="text" class="labelless" />
 	
