@@ -1,3 +1,9 @@
+/*
+ * Label-less jQuery plugin
+ * Licensed same as jQuery ( http://jquery.org/license )
+ * Contribute by sending a pull request to ( https://github.com/zporter/labelless_fields )
+*/
+
 (function( $ ) {
 	
   $.fn.labelless = function( options ) {
@@ -78,7 +84,7 @@
 						label_for = $label.attr('for'),
 						$field;
 						
-				if ( !label_for || ( settings.picky && !$label.hasClass('labelless') ) ) {
+				if ( !label_for ) {
 					return;	// for attribute wasn't used; cannot attach to field
 				}
 				
@@ -94,7 +100,7 @@
 					"textarea#" + label_for
 				);
 				
-				if ( $field.length === 0 ) {
+				if ( $field.length === 0 || ( settings.picky && !$field.hasClass('labelless') ) ) {
 					return;	// no field to attach the label to
 				}
 				
