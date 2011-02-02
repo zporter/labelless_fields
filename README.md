@@ -6,8 +6,6 @@ __License:__ [Same as jQuery (Dual GPL + MIT)](http://jquery.org/license)
 
 __Author:__ [Zachary Porter](http://zporter.tumblr.com)
 
-__Size:__ Under 1KB Minified and gzipped
-
 ## Overview
 
 This is a simple plugin that turns properly formatted HTML forms into forms with fields that have labels in them. Labels fade when the field is focused ( optional ) and disappear when text entry begins. Clearing a field brings back the label.
