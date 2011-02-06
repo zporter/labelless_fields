@@ -35,6 +35,6 @@ form { margin: 30px 20px; }
 
 label { display: block; }
 
-input { padding: 6px; width: 200px; }
+input { padding: 20px; width: 200px; font-size: 14px; margin: 30px 5px 10px; border: 2px solid black; }
 
 textarea { padding: 5px; }
