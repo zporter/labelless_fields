@@ -1,6 +1,6 @@
 # Label-less Fields jQuery Plugin
 
-__Version:__ 0.2
+__Version:__ 0.4
 
 __License:__ [Same as jQuery (Dual GPL + MIT)](http://jquery.org/license)
 
@@ -70,6 +70,14 @@ Like most other github projects, fork, modify and send a pull request at https:/
 [dcneiner](https://github.com/dcneiner) and his jQuery plugin [In-Fields-Labels](https://github.com/dcneiner/In-Field-Labels-jQuery-Plugin) was a great inspiration to publish this one. I wanted a solution where I didn't have to rely on CSS rules.
 
 ## Changelog
+
+*Version 0.4*
+
+* Added keyup event to remove "flicker" occurring when user began inputing text. Also removed showing global variable, because it was being shared by all labels. Not sure what I was thinking by using a global.
+
+*Version 0.3*
+
+* Fixed positioning of label to factor in different margin / border / padding combinations on the input field.
 
 *Version 0.2*
 
