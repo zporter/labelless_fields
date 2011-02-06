@@ -14,8 +14,7 @@
 			'fadeOpacity': .5,
 			'fadeDuration': 200,
 			'picky': false
-		},
-		showing = true;
+		};
 		
 		/*
 		 * Functions to handle different responsibilities
@@ -57,11 +56,9 @@
 		function showLabel ( label, field ) {
 			if ( field.val() != '' ) {
 				label.stop().hide();
-				showing = false;
 			}
-			else if ( !showing ) {
+			else if ( label.is(':hidden') ) {
 				label.show();
-				showing = true;
 			}
 		}
 		
@@ -69,17 +66,22 @@
 			field.bind('keyup.labelless', function (e) {
 				showLabel( label, field );
 			})
+			.bind('keydown.labelless', function (e) {
+			  pattern = /\w/g;
+			  if ( label.is(':visible') && pattern.test(String.fromCharCode(e.which)) ) {
+			    label.stop().hide();
+			  }
+			})
 			.bind('focus.labelless', function (e) {
-				if ( showing && settings.fadeOnFocus ) {
+				if ( label.is( ':visible' ) && settings.fadeOnFocus ) {
 					label.stop().animate( { opacity: settings.fadeOpacity }, settings.fadeDuration );
 				}
 			})
 			.bind( 'blur.labelless', function (e) {
 				if ( field.val() != '' ) {
 					label.stop().hide();
-					showing = false;
 				}
-				else if (showing) {
+				else if ( label.is( ':visible' ) ) {
 					label.stop().css( 'opacity', 1.0 );
 				}
 			});
