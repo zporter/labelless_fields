@@ -28,7 +28,7 @@
 		  var fieldMarginTop = parseFloat(field.css("margin-top")),
 		      fieldBorderTop = parseFloat(field.css("border-top-width")),
 		      fieldPaddingTop = parseFloat(field.css('padding-top')),
-		      labelTop = fieldMarginTop + fieldBorderTop + fieldPaddingTop + 2,
+		      labelTop = fieldMarginTop + fieldBorderTop + fieldPaddingTop,
 		      fieldMarginLeft = parseFloat(field.css('margin-left')),
 		      fieldBorderLeft = parseFloat(field.css('border-left-width')),
 		      fieldPaddingLeft = parseFloat(field.css('padding-left')),
