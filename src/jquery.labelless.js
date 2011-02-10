@@ -1,5 +1,5 @@
 /*
- * Label-less jQuery plugin
+ * Label-less jQuery plugin ( version 0.5 )
  * Licensed same as jQuery ( http://jquery.org/license )
  * Contribute by sending a pull request to ( https://github.com/zporter/labelless_fields )
 */
@@ -13,7 +13,9 @@
 			'fadeOnFocus': true,
 			'fadeOpacity': .5,
 			'fadeDuration': 200,
-			'picky': false
+			'picky': false,
+			'labelTop': 3,
+			'labelLeft': 5
 		};
 		
 		/*
@@ -23,16 +25,14 @@
 		function positionLabel ( label, field ) {
 		  label.parent().css("position", "relative");
 		  
-		  /*var top = ( field.outerHeight(true) - field.height() ) / 2,
-		      left = ( field.outerWidth(true) - field.width() ) / 2;*/
 		  var fieldMarginTop = parseFloat(field.css("margin-top")),
 		      fieldBorderTop = parseFloat(field.css("border-top-width")),
 		      fieldPaddingTop = parseFloat(field.css('padding-top')),
-		      labelTop = fieldMarginTop + fieldBorderTop + fieldPaddingTop,
+		      labelTop = parseFloat(settings.labelTop),
 		      fieldMarginLeft = parseFloat(field.css('margin-left')),
 		      fieldBorderLeft = parseFloat(field.css('border-left-width')),
 		      fieldPaddingLeft = parseFloat(field.css('padding-left')),
-		      labelLeft = fieldMarginLeft + fieldBorderLeft + fieldPaddingLeft + 2;
+		      labelLeft = parseFloat(settings.labelLeft);
 		  
 		  if ( field.css('font-size') != '' )
 		  {
@@ -46,10 +46,12 @@
 				"left": labelLeft + "px",
 				'color': settings.labelColor,
 				'font-weight': field.css('font-weight'),
-				'padding-left': '0px',
-				'padding-top': '0px',
-				'margin-left': '0px',
-				'margin-top': '0px'
+				'border-top-width': fieldBorderTop + 'px',
+				'border-left-width': fieldBorderLeft + 'px',
+				'padding-left': fieldPaddingLeft + 'px',
+				'padding-top': fieldPaddingTop + 'px',
+				'margin-left': fieldMarginLeft + 'px',
+				'margin-top': fieldMarginTop + 'px'
 			});
 		}
 		

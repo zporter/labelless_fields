@@ -1,6 +1,6 @@
 # Label-less Fields jQuery Plugin
 
-__Version:__ 0.4
+__Version:__ 0.5
 
 __License:__ [Same as jQuery (Dual GPL + MIT)](http://jquery.org/license)
 
@@ -12,7 +12,7 @@ This is a simple plugin that turns properly formatted HTML forms into forms with
 
 ## Browser Support
 
-IE6+, WebKit Browsers (Safari, Chrome), Firefox 3+
+IE6+, WebKit Browsers (Safari, Chrome), Firefox 3+, Opera
 
 ## Use
 
@@ -33,7 +33,7 @@ IE6+, WebKit Browsers (Safari, Chrome), Firefox 3+
 
 ## Options
 
-Five options can be passed along with the method. Feel free to play with the given example html page by passing in the different options. The example page can be found under example/index.html
+Options can be passed along with the method. Feel free to play with the given example html page by passing in the different options. The example page can be found at example/index.html
 
 To set the options, use the following syntax:
 
@@ -61,28 +61,36 @@ When set to true, the plugin will only look for inputs with class of "labelless"
 
 	<input type="text" class="labelless" />
 	
+*<code>labelTop:</code> Integer value*
+
+The positioning of the label works in most circumstances. However, depending on what styles you have set, the label may not align properly. Set this value to line up the label vertically. Default value: 3
+
+*<code>labelLeft:</code> Integer value*
+
+The positioning of the label works in most circumstances. However, depending on what styles you have set, the label may not align properly. Set this value to line up the label horizontally. Default value: 5
+	
 ## Contribute
 
-Like most other github projects, fork, modify and send a pull request at https://github.com/zporter/labelless_fields
+Like most other GitHub projects, fork, modify and send a pull request at https://github.com/zporter/labelless_fields
 
 ## Acknowledgements
 
-[dcneiner](https://github.com/dcneiner) and his jQuery plugin [In-Fields-Labels](https://github.com/dcneiner/In-Field-Labels-jQuery-Plugin) was a great inspiration to publish this one. I wanted a solution where I didn't have to rely on CSS rules.
+[dcneiner](https://github.com/dcneiner) and his jQuery plugin [In-Fields-Labels](https://github.com/dcneiner/In-Field-Labels-jQuery-Plugin) was a great inspiration to publish this one. I wanted a solution where I didn't have to rely on setting CSS rules.
 
 ## Changelog
 
-*Version 0.4*
+*Version 0.5*   
+* Made modifications to the positioning of the label for all versions of IE     
+* Added the labelTop and labelLeft options to accommodate different CSS styles that may alter default functionality. 
 
+*Version 0.4*   
 * Added keyup event to remove "flicker" occurring when user began inputing text. Also removed showing global variable, because it was being shared by all labels. Not sure what I was thinking by using a global.
 
-*Version 0.3*
-
+*Version 0.3*   
 * Fixed positioning of label to factor in different margin / border / padding combinations on the input field.
 
-*Version 0.2*
-
+*Version 0.2*   
 * picky option now targets input tags instead of label tags
 
-*Version 0.1*
-
+*Version 0.1*   
 * Initial Release
